@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AES</title>
+    <link rel="stylesheet" href="./css/estilo.css">
+    
+</head>
+<body>
+
+    <form id="formulario"enctype="multipart/form-data">
+
+        <div class="titulo">
+
+            <h2>CIFRADO AES</h2>
+
+        </div>
+
+        
+        
+        <button id="cifrar" onclick="mostrarCifrado()" class="boton">Cifrar</button>
+        
+        <button id="descifrar" onclick="mostrarDescifrado()" class="boton" >Descifrar</button>
+
+        
+        <div class="parteCifrado" id="parteCifrado">
+
+            <label for="key">Ingresa la contraseña</label>
+            <input type="text" id="key" />
+
+            <p>
+                Elige el tipo de llave
+                128(16 caracteres)<input type="radio" name="keySelector" value="128"/>
+                192(24 caracteres)<input type="radio" name="keySelector" value="192"/>
+                256(32 caracteres)<input type="radio" name="keySelector" value="256"/>
+    
+            </p>
+
+            <label for="mensaje">Ingresa tu texto a cifrar</label>
+            <textarea placeholder="Ingresa tu texto a cifrar" id="mensaje"></textarea> 
+
+            <p>
+                Selecciona el formato
+                .txt<input type="radio" name="arcSelector" value="txt"/>
+                .doc<input type="radio" name="arcSelector" value="doc"/>
+                .pdf<input type="radio" name="arcSelector" value="pdf"/>
+    
+            </p>
+        
+            <button id="descargar" class="boton">Descargar</button>     
+        </div>
+
+        <div class="parteDescifrado" id="parteDescifrado">
+            <label for="key">Ingresa la contraseña</label>
+            <input type="text" id="clav" />
+            
+            <label for="file">Elige el archivo a cargar</label>
+            <input type="file" id="file" name="file" accept=".txt">
+            <button id="enviar" name="enviar" class="boton">Enviar</button>
+
+        </div>
+
+        <p id = "error"></p>
+        <p id = "t"></p>
+        <p id = "r"></p>
+
+    </form>
+
+    <script src="js/funcionalidad.js"></script>
+    <script src="js/diseño.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <script src="js/Descifrado.js"></script>
+
+</body>
+</html>
